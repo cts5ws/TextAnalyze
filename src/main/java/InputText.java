@@ -49,7 +49,6 @@ public class InputText {
             // if word is illegal (see README for explanation), decrease word count
             // since invalid words don't count towards the average
             } else{
-                System.out.println("Mismatch: " + word);
                 wordCount--;
             }
         }
@@ -126,8 +125,6 @@ public class InputText {
                     mostCommonWords.add(word);
                 }
             }
-
-            System.out.println(mostCommonWords.toString());
         }
 
         // if no valid words, return empty string as it is the most common
@@ -183,8 +180,6 @@ public class InputText {
             }
         }
 
-        System.out.println("WordMap:" + wordMap.toString());
-
         // handle no valid words
         if(wordMap.keySet().size() == 0){
             return new ArrayList<>();
@@ -193,12 +188,9 @@ public class InputText {
         // after calculating all the counts, store the value set in an arraylist
         ArrayList<WordCount> counts = new ArrayList<>(wordMap.values());
 
-        System.out.println("Unsorted: " + counts);
-
         // sort the Arraylist, using Comparable
         // sorts in ascending order based on count of word
         Collections.sort(counts);
-        System.out.println("Sorted: " + counts);
 
         // create list to hold return value
         ArrayList<String> medianList = new ArrayList<>();
